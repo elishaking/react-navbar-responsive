@@ -34,7 +34,20 @@
     }
 
     #links {
-      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      background: white;
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+
+      li {
+        margin-left: 0;
+      }
     }
   }
 }
