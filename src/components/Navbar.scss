@@ -12,4 +12,27 @@
       margin-left: 3em;
     }
   }
+
+  #burger {
+    display: none;
+
+    div {
+      background: black;
+      height: 2px;
+      width: 20px;
+      border-radius: 100px;
+      margin-bottom: 3px;
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  @media (max-width: 760px) {
+    #burger {
+      display: block;
+    }
+
+    #links {
+      display: none;
+    }
+  }
 }
