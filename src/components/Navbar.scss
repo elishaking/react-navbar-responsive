@@ -15,6 +15,8 @@
 
   #burger {
     display: none;
+    z-index: 10;
+    cursor: pointer;
 
     div {
       background: black;
@@ -35,4 +37,20 @@
       display: none;
     }
   }
+}
+
+@keyframes scale-fade {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.scale-fade-animation {
+  animation: scale-fade 0.3s ease-in-out forwards;
 }
