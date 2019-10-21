@@ -3,13 +3,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 2em 10vw;
-}
 
-#navbar ul {
-  display: flex;
-  list-style: none;
-}
+  ul {
+    display: flex;
+    list-style: none;
 
-#navbar ul li {
-  margin-left: 3em;
+    li {
+      margin-left: 3em;
+    }
+  }
 }
