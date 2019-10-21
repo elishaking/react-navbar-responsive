@@ -4,12 +4,18 @@ import './Navbar.scss';
 
 export default class Navbar extends Component {
 
-  /** @param {React.MouseEvent<HTMLDivElement>} event */
-  slideNav = (event) => {
-    const burger = event.target;
+  /** @param {React.MouseEvent<HTMLDivElement>} e */
+  slideNav = (e) => {
+    const burger = document.querySelector("#burger");
     const links = document.querySelector("#links");
+    const allLinks = document.querySelectorAll("#links li");
 
+    links.classList.toggle('show-links');
+    burger.classList.toggle('show-links');
 
+    allLinks.forEach((link) => {
+      link.classList.toggle('scale-fade-animation');
+    });
   };
 
   render() {
