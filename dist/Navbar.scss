@@ -1,0 +1,94 @@
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 10vw;
+
+  ul {
+    display: flex;
+    list-style: none;
+
+    li {
+      margin-left: 3em;
+    }
+  }
+
+  #burger {
+    display: none;
+    z-index: 10;
+    cursor: pointer;
+
+    div {
+      background: black;
+      height: 2px;
+      width: 20px;
+      border-radius: 100px;
+      margin-bottom: 3px;
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  @media (max-width: 760px) {
+    #burger {
+      display: block;
+    }
+
+    #links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      background: #f5f2f2;
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(100%);
+      transition: 0.3s ease-in-out;
+
+      li {
+        margin-left: 0;
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.show-links {
+  transform: translateX(0) !important;
+}
+
+.show-links:not(div) {
+  display: flex !important;
+}
+
+.show-links .line1 {
+  transform: rotate(-45deg) translate(-3px, 5px);
+}
+
+.show-links .line2 {
+  opacity: 0;
+}
+
+.show-links .line3 {
+  transform: rotate(45deg) translate(-3px, -5px);
+}
+
+@keyframes scaleFade {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.scale-fade-animation {
+  animation: scaleFade 0.3s ease-in-out forwards;
+  animation-delay: 0.2s;
+}

@@ -1,9 +1,11 @@
 {
   "name": "responsive_navbar",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/preset-react": "^7.6.3",
     "node-sass": "^4.12.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
@@ -17,7 +19,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "publish:npm": "rm -rf dist && mkdir dist &&  babel ./src/components -d dist --copy-files"
   },
   "eslintConfig": {
     "extends": "react-app"
