@@ -2,6 +2,7 @@
   "name": "responsive_navbar",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "dependencies": {
     "node-sass": "^4.12.0",
     "react": "^16.10.2",
