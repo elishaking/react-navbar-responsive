@@ -1,5 +1,6 @@
 //@ts-check
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.scss';
 
 export default class Navbar extends Component {
@@ -41,6 +42,10 @@ export default class Navbar extends Component {
           {
             links.map((link) => {
               if (link.html) return link.html;
+
+              if (link.isRoute) return (
+                <li><Link to={link.to}>{link.text} </Link> </li>
+              )
 
               return (
                 <li><a href={link.to}>{link.text}</a></li>
