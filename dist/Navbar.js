@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _reactRouterDom = require("react-router-dom");
+
 require("./Navbar.scss");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -38,18 +40,13 @@ var Navbar =
 function (_Component) {
   _inherits(Navbar, _Component);
 
-  function Navbar() {
-    var _getPrototypeOf2;
-
+  /** @param {{links: {to: string, text: string, isRoute: boolean, html: JSX.Element}[]}} props */
+  function Navbar(props) {
     var _this;
 
     _classCallCheck(this, Navbar);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Navbar)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Navbar).call(this, props));
 
     _defineProperty(_assertThisInitialized(_this), "slideNav", function (e) {
       var burger = document.querySelector("#burger");
@@ -62,17 +59,31 @@ function (_Component) {
       });
     });
 
+    _this.state = {
+      links: props.links
+    };
     return _this;
   }
+  /** @param {React.MouseEvent<HTMLDivElement>} e */
+
 
   _createClass(Navbar, [{
     key: "render",
     value: function render() {
+      var links = this.state.links;
       return _react.default.createElement("div", {
         id: "navbar"
       }, _react.default.createElement("h1", null, "Logo"), _react.default.createElement("ul", {
         id: "links"
-      }, _react.default.createElement("li", null, "Home"), _react.default.createElement("li", null, "About"), _react.default.createElement("li", null, "Contact"), _react.default.createElement("li", null, "Sign In")), _react.default.createElement("div", {
+      }, links.map(function (link) {
+        if (link.html) return link.html;
+        if (link.isRoute) return _react.default.createElement("li", null, _react.default.createElement(_reactRouterDom.Link, {
+          to: link.to
+        }, link.text, " "), " ");
+        return _react.default.createElement("li", null, _react.default.createElement("a", {
+          href: link.to
+        }, link.text));
+      })), _react.default.createElement("div", {
         id: "burger",
         onClick: this.slideNav
       }, _react.default.createElement("div", {
