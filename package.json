@@ -1,6 +1,7 @@
 {
   "name": "react_navbar_responsive",
-  "version": "1.0.2",
+  "description": "Responsive Navbar Component for React",
+  "version": "1.0.3",
   "private": false,
   "license": "MIT",
   "dependencies": {
