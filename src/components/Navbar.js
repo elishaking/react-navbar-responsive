@@ -4,7 +4,7 @@ import './Navbar.scss';
 
 export default class Navbar extends Component {
 
-  /** @param {{links: {to: string, text: string}[]}} props */
+  /** @param {{links: {to: string, text: string, isRoute: boolean, html: JSX.Element}[]}} props */
   constructor(props) {
     super(props);
 
@@ -39,9 +39,13 @@ export default class Navbar extends Component {
           <li>Contact</li>
           <li>Sign In</li> */}
           {
-            links.map((link) => (
-              <li><a href={link.to}>{link.text}</a></li>
-            ))
+            links.map((link) => {
+              if (link.html) return link.html;
+
+              return (
+                <li><a href={link.to}>{link.text}</a></li>
+              );
+            })
           }
         </ul>
 

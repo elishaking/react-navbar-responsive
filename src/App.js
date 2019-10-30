@@ -16,8 +16,7 @@ function App() {
             text: "About"
           },
           {
-            to: "/contact",
-            text: "Contact"
+            html: (<li><a href="/contact">Contact</a></li>)
           },
           {
             to: "/signin",
