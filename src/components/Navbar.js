@@ -4,6 +4,15 @@ import './Navbar.scss';
 
 export default class Navbar extends Component {
 
+  /** @param {{links: {to: string, text: string}[]}} props */
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      links: props.links
+    };
+  }
+
   /** @param {React.MouseEvent<HTMLDivElement>} e */
   slideNav = (e) => {
     const burger = document.querySelector("#burger");
@@ -19,15 +28,21 @@ export default class Navbar extends Component {
   };
 
   render() {
+    const { links } = this.state;
     return (
       <div id="navbar">
         <h1>Logo</h1>
 
         <ul id="links">
-          <li>Home</li>
+          {/* <li>Home</li>
           <li>About</li>
           <li>Contact</li>
-          <li>Sign In</li>
+          <li>Sign In</li> */}
+          {
+            links.map((link) => (
+              <li><a href={link.to}>{link.text}</a></li>
+            ))
+          }
         </ul>
 
         <div id="burger" onClick={this.slideNav}>
