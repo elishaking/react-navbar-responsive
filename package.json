@@ -36,5 +36,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elishaking/react-navbar-responsive"
+  },
+  "keywords": [
+    "React",
+    "Navbar",
+    "Responsive",
+    "Component"
+  ],
+  "author": "King Elisha",
+  "bugs": {
+    "url": "https://github.com/elishaking/react-navbar-responsive/issues"
+  },
+  "homepage": "https://github.com/elishaking/react-navbar-responsive#readme"
 }
